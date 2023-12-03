@@ -1,0 +1,13 @@
+class AccountException(Exception):
+    pass
+balance = 10000
+def withdraw(amt):
+    global balance
+    if balance-amt<5000:
+        raise AccountException("MInimum Balance Need to be maintained")
+    else:
+        print("minimum balance:",balance - amt)
+try:
+    withdraw(6000)
+except AccountException as e:
+    print(e)
